@@ -66,7 +66,6 @@ int main(){
         int min = 0; 
         int max = length -1;
 
-        
         int rannum =  rand() % length-1;
         missingWord[rannum] = sy[0];//REPLACE WITH UNDERSORE
     }
@@ -95,7 +94,8 @@ int main(){
         chance = chance -1;
         printf("----------------\n");
         printf("%d chances left \n", chance);
-
+        //COMPARE MISSING ARRAY WITH FULL ARRAY
+        //CHECK FOR WIN
        int result = memcmp(fullWord, missingWord,length);
        //printf("----------%d-------\n",result );
        if(result==0){
@@ -103,7 +103,7 @@ int main(){
         break;
        }    
     }
-
+    //CHECK FOR UNDERSCORE AND LOOSE
     for (int x =0;x< length; x++) {
         if (missingWord[x]==sy[0]) {
             printf("----------------\nYOU LOOSE\n----------------\n");
