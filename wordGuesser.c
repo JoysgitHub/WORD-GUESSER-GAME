@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
+#include <windows.h> //comment out on mac or linux
+//constant for chances
+#define CHANCES 5
 
 //This clears thew input buffer after each input
 void emptyInputBuffer() {
@@ -39,7 +42,7 @@ int main(){
 
     char* word = randomWord();
     
-    int chances = 5;
+    //int chances = 5;
     
     int length = strlen(word);
     char fullWordList[length];
@@ -72,7 +75,7 @@ int main(){
     }
 
     int chance = 5;
-    for (int k=0; k<chances; k++) {
+    for (int k=0; k<CHANCES; k++) {
         //PRINT MISSING LETTER WORD
         printf("----------------\n");
         for (int l=0; l<length; l++) {
@@ -86,6 +89,7 @@ int main(){
         printf("> ");
         letter = getchar();
         emptyInputBuffer();
+        system("cls");     //comment this line to make the game work on linux and mac
         uletter = toupper(letter);
         for(int j=0; j<length;j++){
             if (fullWord[j]==uletter) {
@@ -93,6 +97,8 @@ int main(){
             }
         }
         chance = chance -1;
+        
+
         printf("----------------\n");
         printf("%d chances left \n", chance);
 
