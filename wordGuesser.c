@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
-#include <windows.h> //comment out on mac or linux
+#include <windows.h> //comment this line out to make the game work on mac or linux
 //constant for chances
 #define CHANCES 5
 
